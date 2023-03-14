@@ -4,23 +4,58 @@
     <ul>
       <li v-for="repo in repos" :key="repo.id">{{ repo.name }}</li>
     </ul>
-    <button @click="page--;" :disabled="page===1" >Previous</button>
-    <span>{{ page }}</span>
-    <button @click="page++;" :disabled="page===5">Next</button>
+    <button @click="page--" :disabled="page === 1">Previous</button>
+    <button @click="page++" :disabled="page === 5">Next</button>
 
+    <div>
+      <button
+        v-for="pageNumber in pageCount"
+        :key="pageNumber"
+        @click="page = pageNumber"
+      >
+        1
+      </button>
+      <button
+        v-for="pageNumber in pageCount"
+        :key="pageNumber"
+        @click="page = pageNumber + 1"
+      >
+        2
+      </button>
+      <button
+        v-for="pageNumber in pageCount"
+        :key="pageNumber"
+        @click="page = pageNumber + 2"
+      >
+        3
+      </button>
+      <button
+        v-for="pageNumber in pageCount"
+        :key="pageNumber"
+        @click="page = pageNumber + 3"
+      >
+        4
+      </button>
+      <button
+        v-for="pageNumber in pageCount"
+        :key="pageNumber"
+        @click="page = pageNumber + 4"
+      >
+        5
+      </button>
+    </div>
   </div>
 </template>
 
 <script>
 import axios from "axios";
 
-
 export default {
   name: "RepositoryGithub",
   data() {
     return {
-        page: 1,
-        perPage: 6,
+      page: 1,
+      perPage: 6,
       repos: [],
     };
   },
@@ -35,12 +70,17 @@ export default {
       this.repos = response.data;
     },
   },
-
-    watch: {
-        page() {
-        this.fetchRepos();
-        },
+  computed: {
+    pageCount() {
+      return Math.ceil(this.repos.length / this.perPage);
     },
+  },
+
+  watch: {
+    page() {
+      this.fetchRepos();
+    },
+  },
 };
 </script>
 

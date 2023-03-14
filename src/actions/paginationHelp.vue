@@ -1,83 +1,120 @@
 <template>
-    <div>
-        <slot>
-        </slot>
-        <div class="pagination-row">
-            <button class="pagination-btn" @click="prevPage">Prev</button>
-            <span v-for="(item, index) in new Array(7)" :key="index">
-                <button class="pagination-btn" >{{ index + 1 }}</button>
-            </span>
-            <button class="pagination-btn" @click="nextPage">Next</button>
-        </div>
-    </div>
+  <ul class="paginationMain">
+    <li class="pagination-item">
+      <button type="button" @click="onClickFirstPage" :disabled="isInFirstPage">First</button>
+    </li>
+
+    <li class="pagination-item">
+      <button type="button" @click="onClickPage(page.name)">Previous</button>
+    </li>
+
+    <!-- Visible buttons start -->
+    <li v-for="page in pages" :key="page.name" class="pagination-item">
+      <button type="button" :disabled="page.isDisabled">{{ page.name }}</button>
+    </li>
+
+    <!-- ... -->
+
+    <!-- Visible buttons end -->
+
+    <li class="pagination-item">
+      <button type="button" @click="onClickNextPage" :disabled="isInLastPage">Next</button>
+    </li>
+
+    <li class="pagination-item">
+      <button type="button" @click="onClickLastPage" :disabled="isInLastPage">Last</button>
+    </li>
+  </ul>
 </template>
 
 <script>
-import axios from 'axios';
-
 export default {
-    name: 'PaginationNum',
-    data() {
-        return {
-            repos: null,
-            recordsPerPage:  axios.get('https://api.github.com/users/Ranecodes/repos?page=1&per_page=2')
-            .then(response => {
-                this.repos = response.data;
-            }),
-            page: 1,
-        
-        }
+  props: {
+    maxVisibleButtons: {
+      type: Number,
+      required: false,
+      default: 3,
     },
-    created() {
-        axios.get('https://api.github.com/users/Ranecodes/repos')
-            .then(response => {
-                this.repos = response.data;
-            }),
-            axios.get('https://api.github.com/users/Ranecodes/repos?page=1&per_page=2')
-            .then(response => {
-                this.repos = response.data;
-            })
+    totalPages: {
+      type: Number,
+      required: true,
     },
-
-    methods: {
-            nextPage() {
-                this.page++;
-                axios.get('https://api.github.com/users/Ranecodes/repos?page=' + this.page + '&per_page=2')
-                .then(response => {
-                    this.repos = response.data;
-                })
-            },
-            prevPage() {
-                this.page--;
-                axios.get('https://api.github.com/users/Ranecodes/repos?page=' + this.page + '&per_page=2')
-                .then(response => {
-                    this.repos = response.data;
-                })
-            },
-            goToPage(page) {
-                this.page = page;
-                axios.get('https://api.github.com/users/Ranecodes/repos?page=' + this.page + '&per_page=2')
-                .then(response => {
-                    this.repos = response.data;
-                })
-            }
+    perPage: {
+      type: Number,
+      required: true,
+    },
+    currentPage: {
+      type: Number,
+      required: true,
+    },
+  },
+  computed: {
+    startPage() {
+        //when on the first page
+        if (this.currentPage === 1) {
+            return 1;
         }
-    }
+        //when on the last page
+        if (this.currentPage === this.totalPages) {
+            return this.totalPages - this.maxVisibleButtons;
+        }
+        //when on the middle pages
+        return this.currentPage - 1;
+    },
+    pages() {
+        const range = [];
+        for (
+            let i = this.startPage;
+            i <= Math.min(this.startPage + this.maxVisibleButtons - 1, this.totalPages);
+            i++
+        ) {
+            range.push({
+                name: i,
+                isDisabled: i === this.currentPage,
+            });
+        }
+        return range;
+    },
+    isInFirstPage() {
+      return this.currentPage === 1;
+    },
+    isInLastPage() {
+      return this.currentPage === this.totalPages;
+    },
+  },
+  methods: {
+    onClickFirstPage() {
+      this.$emit('page-changed', 1);
+    },
+    onClickPreviousPage(){
+        this.$emit('page-changed', this.currentPage - 1);
+    },
+    onClickPage(page) {
+      this.$emit('page-changed', page);
+    },
+    onClickNextPage() {
+      this.$emit('page-changed', this.currentPage + 1);
+    },
+    onClickLastPage() {
+      this.$emit('page-changed', this.totalPages);
+    },
+    isPageActive(page) {
+      return page === this.currentPage;
+    },
+  }
+};
 </script>
 
 <style>
-.pagination-row {
-    display: flex;
-    justify-content: center;
-    margin-top: 20px;
+.paginationMain {
+  list-style-type: none;
+}
+.pagination-item {
+  display: inline-block;
 }
 
-.pagination-btn{
-    background-color: #f5f5f5;
-    padding: 15px;
-    margin: 7px;
-    border-radius: 5px;
-    border: none;
-    cursor: pointer;
+.active {
+  background-color: #4CAF50;
+  color: white;
 }
 </style>

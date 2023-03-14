@@ -6,11 +6,12 @@
 <script>
 import RepositoryGithub from './components/Repository.vue'
 
+
 export default {
   name: 'App',
   components: {
-    RepositoryGithub
-  }
+    RepositoryGithub,
+},
 }
 </script>
 

@@ -1,45 +1,52 @@
 <template>
   <div class="container">
     <h1>Welcome to Github</h1>
-    <ul>
-      <li v-for="repo in repos" :key="repo.id">{{ repo.name }}</li>
-    </ul>
-    <button @click="page--" :disabled="page === 1">Previous</button>
-    <button @click="page++" :disabled="page === 5">Next</button>
+    <div v-for="repo in repos" :key="repo.id">
+      <div class="github-repos">
+        <h3>{{ repo.name }}</h3>
+        <p>{{ repo.description }}</p>
+        <p>{{ repo.language }}</p>
+      </div>
+    </div>
+    <div v-if="loading">
+      <LoaderMain />
+    </div>
+    <button @click="prevPage" :disabled="page === 1">Previous</button>
+    <button @click="nextPage" :disabled="page === 5">Next</button>
 
     <div>
       <button
         v-for="pageNumber in pageCount"
         :key="pageNumber"
-        @click="page = pageNumber"
+        @click="goToPage(pageNumber)"
       >
         1
       </button>
       <button
         v-for="pageNumber in pageCount"
         :key="pageNumber"
-        @click="page = pageNumber + 1"
+        @click="goToPage(pageNumber + 1)"
       >
         2
       </button>
       <button
         v-for="pageNumber in pageCount"
         :key="pageNumber"
-        @click="page = pageNumber + 2"
+        @click="goToPage(pageNumber + 2)"
       >
         3
       </button>
       <button
         v-for="pageNumber in pageCount"
         :key="pageNumber"
-        @click="page = pageNumber + 3"
+        @click="goToPage(pageNumber + 3)"
       >
         4
       </button>
       <button
         v-for="pageNumber in pageCount"
         :key="pageNumber"
-        @click="page = pageNumber + 4"
+        @click="goToPage(pageNumber + 4)"
       >
         5
       </button>
@@ -49,11 +56,16 @@
 
 <script>
 import axios from "axios";
+import LoaderMain from "../actions/loader.vue";
 
 export default {
   name: "RepositoryGithub",
+  components: {
+    LoaderMain,
+  },
   data() {
     return {
+      loading: false,
       page: 1,
       perPage: 6,
       repos: [],
@@ -65,9 +77,33 @@ export default {
 
   methods: {
     async fetchRepos() {
-      const url = `https://api.github.com/users/Ranecodes/repos?page=${this.page}&per_page=${this.perPage}`;
-      const response = await axios.get(url);
-      this.repos = response.data;
+      this.loading = true;
+      axios
+        .get(
+          `https://api.github.com/users/Ranecodes/repos?page=${this.page}&per_page=${this.perPage}`
+        )
+        .then((response) => {
+          this.repos = response.data;
+          this.loading = false;
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    },
+    goToPage(page) {
+      this.page = page;
+      window.scrollTo(0, 0);
+      this.fetchRepos();
+    },
+    nextPage() {
+      this.page++;
+      window.scrollTo(0, 0);
+      this.fetchRepos();
+    },
+    prevPage() {
+      this.page--;
+      window.scrollTo(0, 0);
+      this.fetchRepos();
     },
   },
   computed: {

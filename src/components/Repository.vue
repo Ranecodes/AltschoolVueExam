@@ -2,14 +2,17 @@
   <div class="container">
     <h1>Welcome to Github</h1>
     <div v-for="repo in repos" :key="repo.id">
-      <router-link :to="{name: 'RepoDetails', params: {id: repo.id}}" >{{ repo.name }}</router-link>
-      <div class="github-repos">
-        <h3>{{ repo.name }}</h3>
-        <p>{{ repo.description }}</p>
-        <p>{{ repo.language }}</p>
-
-        <a :href="repo.html_url" target="_blank">View on Github</a>
-      </div>
+      <RouterLink :to="{name: 'RepoDetails', params:{id: repo.id}}">
+        <div class="github-repos">
+          <h3>{{ repo.name }}</h3>
+          <p>{{ repo.description }}</p>
+          <p>{{ repo.language }}</p>
+          <a :href="repo.html_url" target="_blank" v-on:click.stop >View on Github</a>
+          
+        </div>
+      </RouterLink>
+     
+      
     </div>
     <div v-if="loading">
       <LoaderMain />
@@ -59,6 +62,7 @@
 
 <script>
 import axios from "axios";
+import { RouterLink } from "vue-router";
 import LoaderMain from "../actions/loader.vue";
 
 
@@ -66,7 +70,8 @@ export default {
   name: "RepositoryGithub",
   components: {
     LoaderMain,
-  },
+    RouterLink
+},
   data() {
     return {
       loading: false,

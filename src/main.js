@@ -1,21 +1,34 @@
-import { createApp } from 'vue'
 import App from './App.vue'
-import Vue from 'vue'
-import VueRouter from 'vue-router'
-import RepoDetails from './components/RepoDetails.vue'
-import RepositoryGithub from './components/Repository.vue'
+import { createApp } from 'vue'
+import { createRouter, createWebHistory } from 'vue-router'
 
-Vue.use(VueRouter)
 
-const routes = [
-    { path: '/', component: RepositoryGithub },
-    { path: '/repo/:id', component: RepoDetails, props: true }
-]
-
-const router = new VueRouter({
-    mode: 'history',
-    routes
+const router = createRouter( {
+    history: createWebHistory(),
+    routes: [
+        {
+            path: '/',
+            name: 'RepositoryGithub',
+            component: () => import('./components/Repository.vue')
+        },
+        {
+            path: '/repo/:id',
+            name: 'RepoDetails',
+            component: () => import('./components/RepoDetails.vue')
+        },
+        // {
+        //     path: '/external/:url',
+        //     name: 'External',
+        //     beforeEnter(to) {
+        //       window.location = decodeURIComponent(to.params.url);
+        //     }
+        // }
+    ]
 })
 
 createApp(App).use(router).mount('#app')
-createApp(App).mount('#app')
+
+
+
+
+

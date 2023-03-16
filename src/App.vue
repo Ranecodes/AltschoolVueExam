@@ -1,17 +1,14 @@
 <template>
   <img alt="Vue logo" src="./assets/logo.png">
-  <RepositoryGithub/>
+  <RouterView/>
 </template>
 
 <script>
-import RepositoryGithub from './components/Repository.vue'
+
 
 
 export default {
   name: 'App',
-  components: {
-    RepositoryGithub,
-},
 }
 </script>
 

@@ -1,7 +1,9 @@
 import App from './App.vue'
 import { createApp } from 'vue'
 import { createRouter, createWebHistory } from 'vue-router'
-
+import RepoDetails from './components/RepoDetails.vue'
+import RepositoryGithub from './components/Repository.vue'
+import NotFound from './components/NotFound.vue'
 
 const router = createRouter( {
     history: createWebHistory(),
@@ -9,20 +11,19 @@ const router = createRouter( {
         {
             path: '/',
             name: 'RepositoryGithub',
-            component: () => import('./components/Repository.vue')
+            component: RepositoryGithub
         },
         {
             path: '/repo/:id',
             name: 'RepoDetails',
-            component: () => import('./components/RepoDetails.vue')
+            component: RepoDetails,
+            props: true
         },
-        // {
-        //     path: '/external/:url',
-        //     name: 'External',
-        //     beforeEnter(to) {
-        //       window.location = decodeURIComponent(to.params.url);
-        //     }
-        // }
+        {
+            path: '/:notFound(.*)',
+            name: 'NotFound',
+            component: NotFound
+        }
     ]
 })
 

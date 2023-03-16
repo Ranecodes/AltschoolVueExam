@@ -8,10 +8,9 @@
           <p>{{ repo.description }}</p>
           <p>{{ repo.language }}</p>
           <a :href="repo.html_url" target="_blank" v-on:click.stop >View on Github</a>
-          
+
         </div>
       </RouterLink>
-     
       
     </div>
     <div v-if="loading">
@@ -70,7 +69,7 @@ export default {
   name: "RepositoryGithub",
   components: {
     LoaderMain,
-    RouterLink
+    RouterLink,
 },
   data() {
     return {

@@ -285,4 +285,150 @@ export default {
   margin-right: 50px;
   font-weight: 400;
 }
+
+         /* For Smaller Screens */
+
+@media screen and (max-width: 768px) {
+  .hero-section {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .hero-section-images {
+    margin-left: 0;
+    margin-top: 2rem;
+  }
+
+  .hero-section-text {
+    padding: 0 2rem;
+    text-align: center;
+  }
+
+  .hero-section-text h1 {
+    font-size: 2rem;
+  }
+
+  .hero-section-text p {
+    font-size: 1rem;
+  }
+
+  .hero-section-text ul {
+    font-size: 1rem;
+  }
+
+  .hero-section-text-p {
+    line-height: 1.5rem;
+  }
+
+  .hero-section-images .raneh-img {
+    margin-left: 0;
+  }
+
+  .hero-section-images .square {
+    margin-right: 0;
+  }
+
+  .hero-section-images .hs-img {
+    display: none;
+  }
+
+  .mid-section {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+  }
+
+  .git-stats {
+    padding-left: 0;
+  }
+
+  .lang-stats {
+    padding-right: 0;
+  }
+
+  .b4-ft-top h1 {
+    font-size: 2rem;
+    padding-top: 2.8125rem;
+    padding-bottom: 1rem;
+  }
+
+  .b4-ft-top button {
+    padding: 0.5rem 2rem;
+    border-radius: 0.5rem;
+    font-size: 0.75rem;
+  }
+
+  .b4-ft-bottom {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 4rem;
+  }
+
+  .b4-ft-links {
+    padding-right: 0;
+  }
+
+  .logo {
+    padding-left: 0;
+  }
+}
+        /* For mobile screens */
+
+@media screen and (max-width: 480px) {
+  .hero-section {
+    padding: 0 1rem;
+  }
+
+  .hero-section-text {
+    padding: 0 1rem;
+  }
+
+  .hero-section-text h1 {
+    font-size: 1.5rem;
+  }
+
+  .hero-section-text p {
+    font-size: 0.75rem;
+  }
+
+  .hero-section-text ul {
+    font-size: 0.75rem;
+  }
+
+  .hero-section-text-p {
+    line-height: 1rem;
+  }
+
+  .b4-ft-top h1 {
+    font-size: 1.5rem;
+    padding-top: 1.8125rem;
+    padding-bottom: 0.5rem;
+  }
+
+  .b4-ft-top button {
+    padding: 0.25rem 1rem;
+    border-radius: 0.25rem;
+    font-size: 0.5rem;
+  }
+
+  .b4-ft-top button:hover {
+    transform: scale(1);
+  }
+
+  .b4-ft-bottom {
+    padding-top: 2rem;
+  }
+
+  .b4-ft-links {
+    padding-right: 0;
+  }
+
+  .logo {
+    padding-left: 0;
+  }
+}
+
 </style>

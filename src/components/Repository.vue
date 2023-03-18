@@ -20,11 +20,12 @@
           </div>
         </RouterLink>
       </div>
+      <hr>
     </div>
 
     <!-- Searching the repository feature -->
     <div class="pag-btn-row">
-      <button class="pag-btn" @click="prevPage" :disabled="page === 1">Previous</button>
+      <button class="pag-btn" @click="prevPage" :disabled="page === 1">Prev</button>
       
 
       <div>
@@ -155,12 +156,14 @@ export default {
   border-radius: 5px;
 }
 input[type="text"] {
-  padding: 10px;
+  font-family: "DM Sans", sans-serif;
+  padding: 10px 10px 10px 15px;
   border-radius: 5px;
   border: none;
   margin-right: 10px;
   width: 100%;
-  font-size: 1.5rem;
+  font-size: 1rem;
+  color: #24292e;
 }
 .search-bar {
   display: flex;
@@ -172,9 +175,9 @@ input[type="text"] {
   background-color: #7e12ff;
   color: #fff;
   border: none;
-  padding: 0.75rem 3rem;
+  padding: 0.6rem 3rem;
   border-radius: 5px;
-  font-size: 1.2rem;
+  font-size: 1rem;
   font-weight: 700;
   cursor: pointer;
 }
@@ -202,7 +205,7 @@ hr {
 .each-repo-text {
   padding-left: 1.5rem;
   padding-top: 10px;
-  font-size: 1.5rem;
+  font-size: 1rem;
   font-family: "DM Sans", sans-serif;
   font-weight: 400;
 }
@@ -222,8 +225,8 @@ hr {
   border: none;
   padding: 8px 20px;
   border-radius: 5px;
-  font-size: 1.2rem;
-  font-weight: 400;
+  font-size: 1rem;
+  font-weight: 500;
   cursor: pointer;
   margin-left: 23px;
 }

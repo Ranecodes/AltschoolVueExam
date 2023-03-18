@@ -30,6 +30,7 @@
     </div>
     <br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
 
+
     <footer>
       <div class="footer-container">
         <div class="footer-section-left">
@@ -90,16 +91,16 @@ body {
   background-color: #ffd233;
   color: #fff;
   width: fit-content;
-  padding: 6rem 8.5rem;
+  padding: 4rem 3rem;
   border-radius: 2.3125rem;
   margin: 1rem;
-  margin-top: 5rem;
+  margin-top: 3rem;
   margin-bottom: auto;
 }
 
 .card-container h1 {
-  font-size: 3rem;
-  font-weight: 500;
+  font-size: 1.5rem;
+  font-weight: 700;
   margin-bottom: 0.5rem;
   color: #1c1d21;
 }
@@ -110,8 +111,8 @@ body {
   color: #1c1d21;
 }
 .description {
-  padding-bottom: 4.25rem;
-  font-size: 2rem;
+  padding-bottom: 1rem;
+  font-size: 1rem;
 }
 .table-container {
   display: flex;
@@ -119,7 +120,7 @@ body {
   align-items: center;
 }
 .table {
-  font-size: 2rem;
+  font-size: 1rem;
   font-weight: 500;
   margin-bottom: 0.5rem;
   color: #1c1d21;
@@ -139,7 +140,7 @@ td:first-child {
   font-weight: bold;
 }
 .card-container table td {
-  padding: 1.5rem 5rem;
+  padding: 1.5rem 3rem;
 }
 .sr-btn {
   animation: bounce 2s ease-in-out infinite;
@@ -150,7 +151,7 @@ td:first-child {
   margin-top: 4rem;
   padding: 1rem 3rem;
   border-radius: 1rem;
-  font-size: 2rem;
+  font-size: 1rem;
   font-weight: 700;
   cursor: pointer;
   transition: bounce 0.3s ease-in-out;
@@ -181,8 +182,8 @@ footer {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 5rem;
-  font-size: 20px;
+  padding: 1rem;
+  font-size: 14px;
 }
 .footer-section-left {
   display: flex;
@@ -195,12 +196,13 @@ footer {
   display: flex;
   justify-content: flex-end;
   align-items: center;
+  padding-right: 1rem;
 }
 
 .footer-section-right a {
   color: #fff;
   text-decoration: none;
-  font-size: 20px;
+  font-size: 14px;
   font-family: "DM Sans", sans-serif;
 }
 

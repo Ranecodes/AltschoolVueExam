@@ -4,6 +4,7 @@
         <p class="fade-in">Page not found</p> -->
         <img :src="require('/src/assets/Frame1.png')" alt="404 bot">
         <RouterLink class="btn" to="/">Go back to home</RouterLink>
+        <br><br><br><br>
     </div>
 </template>
 
@@ -25,6 +26,7 @@ export default {
     justify-content: center;
     align-items: center;
     height: 100%;
+    background-color: #24292e;
 }
 
 .fade-in {
@@ -54,7 +56,7 @@ export default {
     margin-top: 4rem;
     padding: 1rem 3rem;
     border-radius: 1rem;
-    font-size: 2rem;
+    font-size: 1rem;
     font-weight: 700;
     cursor: pointer;
     transition: bounce 0.3s ease-in-out;

@@ -51,6 +51,35 @@
         <img class="git-stats" :src="require('/src/assets/git-stats.png') " alt="Github Stats">
         <img class="lang-stats" :src="require('/src/assets/lang-stats.png')" alt="Language stats">
     </div>
+    <div class="before-footer-section">
+        <div class="b4-ft-top">
+            <h1>Hall of fame... but for gits!</h1>
+            <button>
+                <RouterLink to="/repos">Go to Repos</RouterLink>
+            </button>
+        </div>
+        <div class="b4-ft-bottom">
+            <RouterLink class="logo" to="/">
+                <img :src="require('/src/assets/bi_github.png')" alt="logo" />
+                <h3>Githall</h3>
+            </RouterLink>
+            <div class="b4-ft-links">
+                <RouterLink to="/repos">Repositories</RouterLink>
+                <RouterLink to="//:notFound(.*)">404 Test</RouterLink>
+            </div>
+        </div>
+    </div>
+    <footer>
+            <div class="footer-container">
+                <div class="footer-section-left">
+                    <h3>Privacy Policy</h3>
+                    <h3>Terms and Conditions</h3>
+                </div>
+                <div class="footer-section-right">
+                    <a href="mailto: ranehobasi@gmail.com">Contact Me</a>
+                </div>
+            </div>
+    </footer>
   </div>
 </template>
 
@@ -157,5 +186,92 @@ export default {
 
 .lang-stats{
     padding-right: 3rem;
+}
+
+
+          /* Before Footer Section */
+.before-footer-section{
+    background-color: #101011;
+    padding-top: 30px;
+    padding-bottom: 55px;
+}
+.b4-ft-top h1{
+    font-size: 3.25rem;
+    font-weight: 400;
+    padding-top: 4.8125rem;
+    padding-bottom: 2rem;
+}
+.b4-ft-top button{
+    font-family: "Poppins", sans-serif;
+    background-color: #7E12FF;
+    color: #fff;
+    border: none;
+    padding: 0.75rem 3rem;
+    border-radius: 1rem;
+    font-size: 2rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease-out;
+}
+
+.b4-ft-bottom{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 8rem;
+}
+
+.b4-ft-links{
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
+    line-height: 2.0;
+    font-size: 24px;
+    padding-right: 19rem;
+}
+
+.logo{
+    padding-left: 7.5rem;
+}
+
+     /* Footer Section */
+
+     footer {
+    font-family: "DM Sans", sans-serif;
+    background-color: #101011;
+  justify-content: space-between;
+  align-items: center;
+}
+.footer-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 5rem;
+    font-size: 20px;
+    
+}
+.footer-section-left {
+  display: flex;
+  justify-content: flex-start;
+  color: #fff;
+  padding-left: 3rem;
+}
+
+.footer-section-right {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.footer-section-right a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 20px;
+  font-family: "DM Sans", sans-serif;
+}
+
+.footer-section-left h3 {
+  margin-right: 50px;
+  font-weight: 400;
 }
 </style>

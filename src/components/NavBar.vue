@@ -34,7 +34,7 @@ nav {
     }
 
     .logo h3{
-        font-size: 28px;
+        font-size: 20px;
     }
     .logo img {
         width: 2rem;
@@ -48,7 +48,7 @@ nav {
 
     .nav-link {
         margin-left: 2rem;
-        font-size: 18px;
+        font-size: 16px;
     }
 
     .nav-link-test{

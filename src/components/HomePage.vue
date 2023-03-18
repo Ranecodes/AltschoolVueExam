@@ -124,7 +124,7 @@ export default {
 .raneh-img {
   border-radius: 50%;
   margin-left: 3.125rem;
-  height: 50%;
+  height: 40%;
   transition: transform 0.3s ease-out;
 }
 
@@ -134,7 +134,7 @@ export default {
 
 .square {
   margin-right: 3.125rem;
-  height: 50%;
+  height: 40%;
   transition: transform 0.3s ease-out;
 }
 
@@ -144,12 +144,12 @@ export default {
 
 .hero-section-text {
   font-family: "DM Sans", sans-serif;
-  padding: 0 10rem;
+  padding: 0 8rem 0 10rem;
   text-align: left;
 }
 
 .hero-section-text h1 {
-  font-size: 4rem;
+  font-size: 3rem;
   font-weight: 400;
 }
 
@@ -164,7 +164,7 @@ export default {
 }
 .hero-section-text ul {
   display: block;
-  font-size: 1.25rem;
+  font-size: 1.2rem;
 }
 
 .hero-section-text-p {
@@ -177,7 +177,7 @@ export default {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 5rem 10rem;
+    padding: 5rem;
 }
 
 .git-stats{
@@ -196,7 +196,7 @@ export default {
     padding-bottom: 55px;
 }
 .b4-ft-top h1{
-    font-size: 3.25rem;
+    font-size: 2.5rem;
     font-weight: 400;
     padding-top: 4.8125rem;
     padding-bottom: 2rem;
@@ -208,7 +208,7 @@ export default {
     border: none;
     padding: 0.75rem 3rem;
     border-radius: 1rem;
-    font-size: 2rem;
+    font-size: 1rem;
     font-weight: 700;
     cursor: pointer;
     transition: all 0.3s ease-out;
@@ -233,12 +233,15 @@ export default {
     flex-direction: column;
     justify-content: space-between;
     line-height: 2.0;
-    font-size: 24px;
+    font-size: 16px;
     padding-right: 19rem;
 }
 
 .logo{
     padding-left: 7.5rem;
+}
+.logo h3{
+  font-size: 16px;
 }
 
      /* Footer Section */
@@ -253,8 +256,8 @@ export default {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem 5rem;
-    font-size: 20px;
+    padding: 1rem;
+    font-size: 14px;
     
 }
 .footer-section-left {
@@ -268,12 +271,13 @@ export default {
   display: flex;
   justify-content: flex-end;
   align-items: center;
+  padding-right: 1rem;
 }
 
 .footer-section-right a {
   color: #fff;
   text-decoration: none;
-  font-size: 20px;
+  font-size: 14px;
   font-family: "DM Sans", sans-serif;
 }
 

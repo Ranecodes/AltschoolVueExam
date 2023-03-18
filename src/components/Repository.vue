@@ -1,21 +1,43 @@
 <template>
   <div class="container">
     <h1>Welcome to Github</h1>
-    <div v-for="repo in repos" :key="repo.id">
-      <RouterLink :to="{name: 'RepoDetails', params:{id: repo.id}}">
+
+    <!-- Seaching the repository feature -->
+    <p>Search for a repository</p>
+    <input type="text" v-model="search" />
+    <button @click="searchRepo">Search</button>
+    <div v-if="loading">
+      <LoaderMain />
+    </div>
+    <div v-if="repos.length">
+      <div v-for="repo in repos" :key="repo.id">
+        <RouterLink :to="{ name: 'RepositoryGithub', params: { id: repo.id } }">
+          <div>
+            <h2>{{ repo.name }}</h2>
+            <p>{{ repo.description }}</p>
+            <p>{{ repo.language }}</p>
+          </div>
+        </RouterLink>
+      </div>
+    </div>
+
+    <!-- Searching the repository feature -->
+
+    <!-- <div v-for="repo in repos" :key="repo.id">
+      <RouterLink :to="{ name: 'RepoDetails', params: { id: repo.id } }">
         <div class="github-repos">
           <h3>{{ repo.name }}</h3>
           <p>{{ repo.description }}</p>
           <p>{{ repo.language }}</p>
-          <a :href="repo.html_url" target="_blank" v-on:click.stop >View on Github</a>
-
+          <a :href="repo.html_url" target="_blank" v-on:click.stop
+            >View on Github</a
+          >
         </div>
       </RouterLink>
-      
     </div>
     <div v-if="loading">
       <LoaderMain />
-    </div>
+    </div> -->
     <button @click="prevPage" :disabled="page === 1">Previous</button>
     <button @click="nextPage" :disabled="page === 5">Next</button>
 
@@ -70,7 +92,7 @@ export default {
   components: {
     LoaderMain,
     RouterLink,
-},
+  },
   data() {
     return {
       loading: false,

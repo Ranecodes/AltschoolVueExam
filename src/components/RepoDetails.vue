@@ -1,11 +1,47 @@
 <template>
-  <div v-if="repo">
-    <h1>{{ repo.name }}</h1>
-    <p>{{ repo.description }}</p>
-    <p>{{ repo.language }}</p>
-    <a :href="repo.html_url" target="_blank">View on Github</a>
+  <div class="srepo-container" v-if="repo">
+    <div class="card-container">
+      <h1>{{ repo.name }}</h1>
+      <p class="description">{{ repo.description }}</p>
+      <div class="table-container">
+        <table class="table">
+          <tr>
+            <td>Language:</td>
+            <td>{{ repo.language }}</td>
+          </tr>
+          <tr>
+            <td>Stars:</td>
+            <td>{{ repo.stargazers_count }}</td>
+          </tr>
+          <tr>
+            <td>Watchers:</td>
+            <td>{{ repo.watchers_count }}</td>
+          </tr>
+          <tr>
+            <td>Forks:</td>
+            <td>{{ repo.forks_count }}</td>
+          </tr>
+        </table>
+      </div>
+
+      <button class="sr-btn">
+        <a :href="repo.html_url" target="_blank">View on Github</a>
+      </button>
+    </div>
+    <br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+
+    <footer>
+      <div class="footer-container">
+        <div class="footer-section-left">
+          <h3>Privacy Policy</h3>
+          <h3>Terms and Conditions</h3>
+        </div>
+        <div class="footer-section-right">
+          <a href="mailto: ranehobasi@gmail.com">Contact Me</a>
+        </div>
+      </div>
+    </footer>
   </div>
-  <RouterLink :to="{name: 'RepositoryGithub'}">Back to Repository</RouterLink>
 </template>
 
 <script>
@@ -35,3 +71,141 @@ export default {
   },
 };
 </script>
+
+<style>
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+.srepo-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: #24292e;
+}
+.card-container {
+  font-family: "DM Sans", sans-serif;
+  background-color: #ffd233;
+  color: #fff;
+  width: fit-content;
+  padding: 6rem 8.5rem;
+  border-radius: 2.3125rem;
+  margin: 1rem;
+  margin-top: 5rem;
+  margin-bottom: auto;
+}
+
+.card-container h1 {
+  font-size: 3rem;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+  color: #1c1d21;
+}
+
+.card-container p {
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+  color: #1c1d21;
+}
+.description {
+  padding-bottom: 4.25rem;
+  font-size: 2rem;
+}
+.table-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.table {
+  font-size: 2rem;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+  color: #1c1d21;
+  border-collapse: collapse;
+}
+
+td {
+  padding: 0.5rem;
+  border: none;
+}
+
+th {
+  border: none;
+}
+
+td:first-child {
+  font-weight: bold;
+}
+.card-container table td {
+  padding: 1.5rem 5rem;
+}
+.sr-btn {
+  animation: bounce 2s ease-in-out infinite;
+  font-family: "DM Sans", sans-serif;
+  background-color: #7e12ff;
+  color: #fff;
+  border: none;
+  margin-top: 4rem;
+  padding: 1rem 3rem;
+  border-radius: 1rem;
+  font-size: 2rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: bounce 0.3s ease-in-out;
+}
+.sr-btn:hover {
+  background-color: #a76bff;
+}
+
+@keyframes bounce {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+footer {
+  font-family: "DM Sans", sans-serif;
+  background-color: #101011;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 5rem;
+  font-size: 20px;
+}
+.footer-section-left {
+  display: flex;
+  justify-content: flex-start;
+  color: #fff;
+  padding-left: 3rem;
+}
+
+.footer-section-right {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.footer-section-right a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 20px;
+  font-family: "DM Sans", sans-serif;
+}
+
+.footer-section-left h3 {
+  margin-right: 50px;
+  font-weight: 400;
+}
+</style>

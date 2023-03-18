@@ -57,23 +57,24 @@ export default {
     font-size: 2rem;
     font-weight: 700;
     cursor: pointer;
-    transition: transform 0.3s ease-in-out;
+    transition: bounce 0.3s ease-in-out;
 }
 
 .btn:hover {
-    transform: scale(1.1);
+    background-color: #A76BFF;
 }
 
 @keyframes bounce {
-    0% {
-        transform: translateY(0);
-    }
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
 
-    50% {
-        transform: translateY(-10px);
-    }
 
-    100% {
-        transform: translateY(0);
-    }
-}</style>
+</style>

@@ -212,7 +212,14 @@ export default {
     font-weight: 700;
     cursor: pointer;
     transition: all 0.3s ease-out;
+    animation: bounce 2s ease-in-out infinite;
 }
+
+.b4-ft-top button:hover{
+    background-color: #A76BFF;
+    transform: scale(1.1);
+}
+
 
 .b4-ft-bottom{
     display:flex;

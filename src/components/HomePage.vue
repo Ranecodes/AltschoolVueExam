@@ -377,7 +377,7 @@ export default {
 }
         /* For mobile screens */
 
-@media screen and (max-width: 480px) {
+@media only screen and (max-width: 600px) {
   .hero-section {
     padding: 0 1rem;
   }

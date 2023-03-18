@@ -5,6 +5,13 @@ import RepoDetails from './components/RepoDetails.vue'
 import RepositoryGithub from './components/Repository.vue'
 import NotFound from './components/NotFound.vue'
 import HomePage from './components/HomePage.vue'
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
+import { faUserSecret } from '@fortawesome/free-solid-svg-icons'
+import { fas } from '@fortawesome/free-solid-svg-icons'
+
+library.add(faUserSecret)
+library.add(fas)
 
 const router = createRouter( {
     history: createWebHistory(),
@@ -33,7 +40,8 @@ const router = createRouter( {
     ]
 })
 
-createApp(App).use(router).mount('#app')
+createApp(App).use(router).component('font-awesome-icon', FontAwesomeIcon).mount('#app')
+
 
 
 

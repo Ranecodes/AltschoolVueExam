@@ -233,4 +233,8 @@ hr {
 .pag-btn:hover{
   background-color: #A76BFF;
 }
+.pag-btn:disabled{
+  background-color: #A76BFF;
+  cursor: not-allowed;
+}
 </style>

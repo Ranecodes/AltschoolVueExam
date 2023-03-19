@@ -28,7 +28,7 @@
       <button class="pag-btn" @click="prevPage" :disabled="page === 1">Prev</button>
       
 
-      <div>
+      <div class="num-row">
         <button
           class="pag-btn" 
           v-for="pageNumber in pageCount"
@@ -212,6 +212,9 @@ hr {
 .each-repo-text:hover {
   color: #7e12ff;
 }
+.num-row{
+  border: none;
+}
 .pag-btn-row {
   display: flex;
   justify-content: center;
@@ -237,4 +240,44 @@ hr {
   background-color: #A76BFF;
   cursor: not-allowed;
 }
+
+@media (max-width: 768px) {
+  .container {
+    padding: 50px;
+  }
+  
+  input[type="text"] {
+    font-size: 0.9rem;
+  }
+  
+  .search-btn {
+    padding: 0.6rem 2rem;
+  }
+  
+  .each-repo-text {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 425px) {
+  .container {
+    padding: 50px;
+  }
+  
+  input[type="text"] {
+    font-size: 0.8rem;
+  }
+  
+  .search-btn {
+    padding: 0.5rem 1.5rem;
+  }
+  
+  .each-repo-text {
+    font-size: 0.8rem;
+  }
+  .num-row{
+    display: none;
+  }
+}
+
 </style>

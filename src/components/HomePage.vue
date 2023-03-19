@@ -287,6 +287,42 @@ export default {
   font-weight: 400;
 }
 
+        /* For smaller laptops */
+
+@media screen and (max-width: 1024px) {
+  .hero-section-text{
+    padding: 0 3rem 0 10rem;
+  }
+  .hero-section-text h1{
+    font-size: 2rem;
+  }
+  .hero-section-text p{
+    font-size: 1rem;
+  }
+  .hero-section-text ul{
+    font-size: 1rem;
+  }
+  .raneh-img{
+    height: 30%;
+  }
+  .square{
+    height: 30%;
+  }
+  .mid-section{
+    padding: 0;
+    justify-content: space-around;
+  }
+  .mid-section img{
+    width: 400px;
+  }
+  .git-stats{
+    padding-left: 0;
+  }
+  .lang-stats{
+    padding-right: 0;
+  }
+}
+
          /* For Smaller Screens */
 
 @media screen and (max-width: 768px) {
@@ -401,6 +437,10 @@ export default {
 
   .hero-section-text-p {
     line-height: 1rem;
+  }
+
+  .mid-section img{
+    width: 100%;
   }
 
   .b4-ft-top h1 {

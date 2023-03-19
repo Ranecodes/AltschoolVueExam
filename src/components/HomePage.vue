@@ -12,6 +12,10 @@
             :src="require('/src/assets/raneh.png')"
             alt=""
           />
+          <div class="name-tag">
+            <h3>Ranehobasi Egbe</h3>
+            <h3 style="font-weight: 400;">Ranecodes</h3>
+          </div>
       </div>
       <div class="hero-section-text">
         <h1>Hello there; Welcome 👋🏾</h1>
@@ -103,9 +107,21 @@ export default {
 }
 
 .hero-section-images {
+  display: flex;
+  flex-direction: column;
   margin-left: 6.25rem;
   bottom: 0;
   left: 100px;
+}
+
+.name-tag{
+  font-family: "DM Sans", sans-serif;
+  margin-left: 2rem;
+  margin-top: 3.125rem;
+  text-align: left;
+  padding-top: 3rem;
+  font-size: 1.25rem;
+  line-height: 0.4;
 }
 
 .hero-section-images:hover .square {
@@ -291,7 +307,7 @@ export default {
 
 @media screen and (max-width: 1024px) {
   .hero-section-text{
-    padding: 0 3rem 0 10rem;
+    padding: 0 3rem 0 4rem;
   }
   .hero-section-text h1{
     font-size: 2rem;
@@ -320,6 +336,12 @@ export default {
   }
   .lang-stats{
     padding-right: 0;
+  }
+  .name-tag{
+    font-size: 1rem;
+    margin-top: 0;
+    line-height: 1;
+    padding-top: 0;
   }
 }
 
@@ -411,6 +433,10 @@ export default {
   .logo {
     padding-left: 0;
   }
+  .name-tag{
+    text-align: center;
+    font-size: 1.5rem;
+  }
 }
         /* For mobile screens */
 
@@ -469,6 +495,9 @@ export default {
 
   .logo {
     padding-left: 0;
+  }
+  .name-tag{
+    display: none;
   }
 }
 

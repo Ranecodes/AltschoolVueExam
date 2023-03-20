@@ -475,7 +475,7 @@ export default {
   }
 
   .mid-section img{
-    width: 70%;
+    width: 100%;
   }
 
   .b4-ft-top h1 {

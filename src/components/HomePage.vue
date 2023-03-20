@@ -97,7 +97,7 @@ export default {
 <style scoped>
 .home-container {
   background-color: #24292e;
-  color: #fff;
+  color: #ffff;
 }
 .hero-section {
   display: flex;

@@ -210,4 +210,34 @@ footer {
   margin-right: 50px;
   font-weight: 400;
 }
+
+@media only screen and (max-width: 600px){
+  .card-container{
+    width: 50%;
+    padding: 2rem;
+  }
+  .card-container h1{
+    font-size: 1rem;
+  }
+  .description{
+    font-size: 0.75rem;
+  }
+  .card-container table td{
+    padding: 1rem;
+  }
+  .sr-btn{
+    margin-top: 0;
+    padding: 1rem 2rem;
+    font-size: 0.75rem;
+  }
+  .footer-container{
+    font-size: 10px;
+  }
+  .footer-section-right a{
+    font-size: 11px;
+  }
+  
+
+
+}
 </style>

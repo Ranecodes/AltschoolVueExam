@@ -123,7 +123,7 @@ a {
   align-items: center;
   position: absolute;
   right: 15px;
-  background: blueviolet;
+  background: #7E12FF;
   top: 50px;
   border-radius: 5px;
   padding: 10px 15px;

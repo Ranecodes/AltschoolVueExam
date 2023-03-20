@@ -463,7 +463,7 @@ export default {
   }
 
   .hero-section-text-p {
-    line-height: 1rem;
+    line-height: 1.2rem;
   }
 
   .hero-section-images .raneh-img {
@@ -475,7 +475,7 @@ export default {
   }
 
   .mid-section img{
-    width: 80%;
+    width: 100%;
   }
 
   .b4-ft-top h1 {
@@ -514,6 +514,12 @@ export default {
   .lang-stats {
     padding-right: 0;
     padding-top: 20px;
+  }
+  .footer-container{
+    font-size: 10px;
+  }
+  .footer-section-right a{
+    font-size: 11px;
   }
 }
 

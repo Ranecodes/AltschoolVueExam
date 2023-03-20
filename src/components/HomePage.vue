@@ -356,12 +356,11 @@ export default {
 
   .hero-section-images {
     margin-left: 0;
-    margin-top: 2rem;
   }
 
   .hero-section-text {
     padding: 0 2rem;
-    text-align: center;
+    text-align: left;
   }
 
   .hero-section-text h1 {
@@ -382,13 +381,14 @@ export default {
 
   .hero-section-images .raneh-img {
     margin-left: 0;
+    top: 0;
+    left: 112px;
+    max-width: 20%;
+    height: auto;
   }
 
   .hero-section-images .square {
     margin-right: 0;
-  }
-
-  .hero-section-images .hs-img {
     display: none;
   }
 
@@ -405,6 +405,7 @@ export default {
 
   .lang-stats {
     padding-right: 0;
+    padding-top: 20px;
   }
 
   .b4-ft-top h1 {
@@ -416,7 +417,7 @@ export default {
   .b4-ft-top button {
     padding: 0.5rem 2rem;
     border-radius: 0.5rem;
-    font-size: 0.75rem;
+    font-size: 1rem;
   }
 
   .b4-ft-bottom {
@@ -434,7 +435,7 @@ export default {
     padding-left: 0;
   }
   .name-tag{
-    text-align: center;
+    text-align: left;
     font-size: 1.5rem;
   }
 }
@@ -446,7 +447,7 @@ export default {
   }
 
   .hero-section-text {
-    padding: 0 1rem;
+    padding: 1rem;
   }
 
   .hero-section-text h1 {
@@ -465,8 +466,16 @@ export default {
     line-height: 1rem;
   }
 
+  .hero-section-images .raneh-img {
+    margin-left: 0;
+    top: 0;
+    left: 80px;
+    max-width: 20%;
+    height: auto;
+  }
+
   .mid-section img{
-    width: 100%;
+    width: 80%;
   }
 
   .b4-ft-top h1 {
@@ -476,9 +485,9 @@ export default {
   }
 
   .b4-ft-top button {
-    padding: 0.25rem 1rem;
+    padding: 0.4rem 1rem;
     border-radius: 0.25rem;
-    font-size: 0.5rem;
+    font-size: 1rem;
   }
 
   .b4-ft-top button:hover {
@@ -497,7 +506,14 @@ export default {
     padding-left: 0;
   }
   .name-tag{
-    display: none;
+    text-align: left;
+    font-size: 0.75rem;
+    padding-left: 40px;
+    line-height: 0.5;
+  }
+  .lang-stats {
+    padding-right: 0;
+    padding-top: 20px;
   }
 }
 

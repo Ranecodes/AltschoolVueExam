@@ -90,6 +90,7 @@ a {
     justify-content: center;
     align-items: center;
     padding: 1rem;
+    position: relative;
   }
 
   .logo {
@@ -126,6 +127,8 @@ a {
   font-size: 1.5rem;
   color: #fff;
   padding-bottom: 15px;
+  position: absolute;
+  right: 10px;
 }
 
 .hamburger-menu-btn:focus {

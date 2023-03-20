@@ -5,8 +5,13 @@
       <img :src="require('/src/assets/bi_github.png')" alt="logo" />
       <h3>Githall</h3>
     </RouterLink>
-    <button class="hamburger-menu-btn" @click="toggleMenu">
-      <font-awesome-icon icon="fa-solid fa-bars" />
+    <button class="hamburger-menu-btn" :class="{'isActive': showMenu}" @click="toggleMenu">
+      <template v-if="!showMenu">
+        <font-awesome-icon icon="fa-solid fa-bars" />
+      </template>
+      <template v-else>
+        <font-awesome-icon icon="fa-solid fa-xmark" />
+      </template>
     </button>
     <ul :class="{ 'show-menu': showMenu }">
       <li class="nav-link nav-link-repo">
@@ -103,6 +108,7 @@ a {
 
   .nav-link-test {
     padding-left: 0;
+    padding-top: 5px;
   }
   .hamburger-menu-btn {
     display: flex;
@@ -111,14 +117,21 @@ a {
   display: none;
   list-style: none;
 }
-
-}
-
 .show-menu {
   display: flex !important;
   flex-direction: column;
   align-items: center;
+  position: absolute;
+  right: 15px;
+  background: blueviolet;
+  top: 50px;
+  border-radius: 5px;
+  padding: 10px 15px;
 }
+
+}
+
+
 
 .hamburger-menu-btn {
   background-color: transparent;
@@ -133,5 +146,11 @@ a {
 
 .hamburger-menu-btn:focus {
   outline: none;
+}
+
+@media only screen and (max-width: 600px){
+  .nav-link{
+    font-size: 14px;
+  }
 }
 </style>

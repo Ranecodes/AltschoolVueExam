@@ -195,6 +195,7 @@ export default {
     justify-content: space-between;
     align-items: center;
     padding: 5rem;
+    background-color: #24292e;
 }
 
 .git-stats{

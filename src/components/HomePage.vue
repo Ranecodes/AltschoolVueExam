@@ -185,7 +185,7 @@ export default {
 }
 
 .hero-section-text-p {
-  line-height: 2rem;
+  line-height: 1.5rem;
 }
 
                        /* Middle Section */

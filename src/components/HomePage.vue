@@ -326,7 +326,6 @@ export default {
     height: 30%;
   }
   .mid-section{
-    padding: 0;
     justify-content: space-around;
   }
   .mid-section img{

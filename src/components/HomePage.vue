@@ -97,7 +97,7 @@ export default {
 <style scoped>
 .home-container {
   background-color: #24292e;
-  color: #fff;
+  color: #ffff;
 }
 .hero-section {
   display: flex;
@@ -195,6 +195,7 @@ export default {
     justify-content: space-between;
     align-items: center;
     padding: 5rem;
+    background-color: #24292e;
 }
 
 .git-stats{
@@ -325,7 +326,6 @@ export default {
     height: 30%;
   }
   .mid-section{
-    padding: 0;
     justify-content: space-around;
   }
   .mid-section img{

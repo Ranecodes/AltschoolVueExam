@@ -1,8 +1,6 @@
 <template>
     <div class="not-found">
-        <!-- <h1 class="fade-in">404</h1>
-        <p class="fade-in">Page not found</p> -->
-        <img :src="require('/src/assets/Frame1.png')" alt="404 bot">
+        <img class="not-found-img" :src="require('/src/assets/Frame1.png') " alt="404 bot">
         <RouterLink class="btn" to="/">Go back to home</RouterLink>
         <br><br><br><br>
     </div>
@@ -77,6 +75,13 @@ export default {
     transform: translateY(0);
   }
 }
+
+@media screen  and (max-width: 600px) {
+    .not-found-img {
+        width: 70%;
+    }
+};
+
 
 
 </style>

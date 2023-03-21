@@ -176,16 +176,16 @@ export default {
 }
 
 .hero-section-text p {
-  font-size: 1.25rem;
+  font-size: 1rem;
   font-weight: 400;
 }
 .hero-section-text ul {
   display: block;
-  font-size: 1.2rem;
+  font-size: 1rem;
 }
 
 .hero-section-text-p {
-  line-height: 2.2275rem;
+  line-height: 2rem;
 }
 
                        /* Middle Section */

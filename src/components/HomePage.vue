@@ -376,7 +376,7 @@ export default {
   }
 
   .hero-section-text-p {
-    line-height: 1.5rem;
+    line-height: 1rem;
   }
 
   .hero-section-images .raneh-img {
@@ -447,7 +447,7 @@ export default {
   }
 
   .hero-section-text {
-    padding: 1rem;
+    padding: 0.5rem 1rem;
   }
 
   .hero-section-text h1 {

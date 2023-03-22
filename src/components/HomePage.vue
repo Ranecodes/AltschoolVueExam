@@ -463,7 +463,7 @@ export default {
   }
 
   .hero-section-text-p {
-    line-height: 1.2rem;
+    line-height: 1rem;
   }
 
   .hero-section-images .raneh-img {

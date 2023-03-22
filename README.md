@@ -11,5 +11,3 @@ I designed this app myself using Figma.
 ![SingleRepoPage](/src/assets/Desktop%20-%203.png)
 
 For the typography I made use of DM Sans and Poppins.
-
-My Color Pallette was composed of majorly <span style="color:#7E12FF">some **this shade of purple.** text</span> and <span style="color:#24292e">some **this shade of black.** text</span>

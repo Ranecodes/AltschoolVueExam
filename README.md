@@ -4,3 +4,12 @@ This is an app built with Vue. It fetches the Github API and displays a user's r
 It also contains a pagination feature and nested routes leading to a single repo card.
 
 Click [here](https://githall.vercel.app/) to view app.
+
+I designed this app myself using Figma. 
+![HomePage](/src/assets/Desktop%20-%201.png)
+![RepositoryPage](/src/assets/Desktop%20-%202.png)
+![SingleRepoPage](/src/assets/Desktop%20-%203.png)
+
+For the typography I made use of DM Sans and Poppins.
+
+My Color Pallette was composed of majorly <span style="color:#7E12FF">some **this shade of purple.** text</span> and <span style="color:#24292e">some **this shade of black.** text</span>
